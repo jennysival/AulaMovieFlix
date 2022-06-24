@@ -4,7 +4,6 @@ data class RegisterModel (
     var userName: String,
     var email: String,
     var password: String,
-    var confirmPassword: String,
-    var validateAccount: Boolean = false
+    var confirmPassword: String
         ){
 }
