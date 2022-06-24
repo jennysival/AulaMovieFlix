@@ -29,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
             getUserData()
             if(!checkFields()){
                 if(!validatePassword()){
-                    account = RegisterModel(name,email,password,confirmPassword)
+                    account = RegisterModel(this.name,this.email,this.password,this.confirmPassword)
                     viewModel.getAccount(account)
                     val username = viewModel.response.value?.userName
                     Toast.makeText(this, "Cadastro de $username realizado com sucesso!", Toast.LENGTH_LONG).show()
