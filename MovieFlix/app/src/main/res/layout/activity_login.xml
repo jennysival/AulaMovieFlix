@@ -73,4 +73,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swSaveData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salvar_login_e_senha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

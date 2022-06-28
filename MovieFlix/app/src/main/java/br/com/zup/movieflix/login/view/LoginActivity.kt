@@ -31,13 +31,20 @@ class LoginActivity : AppCompatActivity() {
             val user = binding.etUsername.text.toString()
             val password =  binding.etPassword.text.toString()
             var login = LoginModel(user,password)
-            viewModel.authentication(login)
+            viewModel.authentication(login, binding.swSaveData.isChecked)
             viewModel.response.observe(this){
                 if(it.accessAuth){
                     startActivity(Intent(this, HomeActivity::class.java))
                 }else{
                     Toast.makeText(this, "Usuario ou senha invalidos", Toast.LENGTH_LONG).show()
                 }
+            }
+            viewModel.savedData.observe(this){
+                binding.etUsername.setText(it.user)
+                binding.etPassword.setText(it.password)
+            }
+            viewModel.saveDataFlag.observe(this){
+                binding.swSaveData.isChecked = it
             }
         }
     }
